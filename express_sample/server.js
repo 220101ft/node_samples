@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
     res.send('Hello!!')
 })
 
+// サーバ停止:起動中のターミナルで Ctrl + C
 // サーバ待機(Listen)
 app.listen(PORT, HOST, () => {
     console.log(HOST)
