@@ -24,3 +24,10 @@ app.get('/', (req, res) => {
     // レスポンスの処理
     res.send('Hello!!')
 })
+
+// サーバ待機(Listen)
+app.listen(PORT, HOST, () => {
+    console.log(HOST)
+    console.log(PORT)
+    console.log('wait...')
+})
