@@ -30,6 +30,11 @@ app.get('/profile', (req, res) => {
     res.send('プロフィール')
 })
 
+// POSTリクエスト
+app.post('/auth', (req, res) => {
+    res.send('認証処理')
+})
+
 // サーバ停止:起動中のターミナルで Ctrl + C
 // サーバ待機(Listen)
 app.listen(PORT, HOST, () => {
