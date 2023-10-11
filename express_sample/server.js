@@ -15,6 +15,9 @@ const app = express()
 // publicフォルダを静的コンテンツのフォルダに設定
 app.use(express.static(__dirname + '/public'))
 
+// URLエンコード
+app.use(express.urlencoded({ extended: true }))
+
 // GETリクエストの処理
 app.get('/', (req, res) => {
     // リクエストの処理
@@ -32,6 +35,11 @@ app.get('/profile', (req, res) => {
 
 // POSTリクエスト
 app.post('/auth', (req, res) => {
+    var loginName = req.body.login_name
+    var password = req.body.password
+
+    console.log(loginName, password)
+
     res.send('認証処理')
 })
 
