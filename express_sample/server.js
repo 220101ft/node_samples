@@ -12,6 +12,7 @@ const PORT = process.env.PORT
 const app = express()
 
 // ミドルウェアの設定
+// publicフォルダを静的コンテンツのフォルダに設定
 app.use(express.static(__dirname + '/public'))
 
 // GETリクエストの処理
