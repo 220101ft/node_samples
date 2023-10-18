@@ -2,6 +2,8 @@
 const express = require('express')
 // Routerオブジェクトを生成
 const router = express.Router()
+// models/item.js を読み込む
+const item = require('./models/item')
 
 // GETリクエストの処理
 router.get('/', (req, res) => {
@@ -21,8 +23,9 @@ router.get('/profile', (req, res) => {
 // /item/xxx のルーティング(パスパラメーター)
 router.get('/item/:id', (req, res) => {
     const id = req.params.id
-
-    res.send(id)
+    // itemモデルを使って、IDで商品データを取得
+    var selectItem = item.find(id)
+    res.send(selectItem.name)
 })
 
 // POSTリクエスト
