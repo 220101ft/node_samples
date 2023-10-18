@@ -14,4 +14,9 @@ exports.get = () => {
     return values;
 }
 
-// IDを指定したら
+// IDを指定してデータ取得するメソッド
+exports.find = (id) => {
+    var values = this.get();
+    // データを繰り返して、id が一致したら返す
+    return values.find(() => values.id == id);
+}
