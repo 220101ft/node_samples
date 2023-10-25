@@ -11,22 +11,7 @@ const HomeController = require('./controllers/HomeController')
 // GETリクエストの処理
 // トップページ
 router.get('/', HomeController.index)
-
-router.get('/profile', (req, res) => {
-    // res.send('プロフィール')
-    var user = {
-        id: 1,
-        name: 'YSE',
-        birthplace: '横浜',
-        hobby: ['旅行', 'グルメ', 'スポーツ'],
-    }
-    var data = {
-        title: 'プロフィール',
-        user: user,
-    }
-    // views/profile.js に data を渡して表示
-    res.render('profile', data)
-})
+router.get('/profile', HomeController.profile)
 
 // 商品一覧
 router.get('/item', (req, res) => {
