@@ -5,18 +5,12 @@ const router = express.Router()
 // models/item.js を読み込む
 const item = require('./models/item')
 
+// HomeControllerモジュール読み込み
+const HomeController = require('./controllers/HomeController')
+
 // GETリクエストの処理
 // トップページ
-router.get('/', (req, res) => {
-    // リクエストの処理
-    console.log(req.body)
-    console.log(req.url)
-    console.log(req.query)
-    // レスポンスの処理
-    // res.send('Hello!!')
-    // テンプレート表示(レンダリング)
-    res.render('index')
-})
+router.get('/', HomeController.index)
 
 router.get('/profile', (req, res) => {
     // res.send('プロフィール')
