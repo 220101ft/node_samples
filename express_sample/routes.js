@@ -12,11 +12,8 @@ const ItemController = require('./controllers/ItemController')
 router.get('/', HomeController.index)
 router.get('/profile', HomeController.profile)
 
-// 商品一覧
+// Item
 router.get('/item', ItemController.index)
-
-// 商品詳細
-// /item/xxx のルーティング(パスパラメーター)
 router.get('/item/:id', ItemController.detail)
 
 // POSTリクエスト
