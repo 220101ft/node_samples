@@ -6,6 +6,7 @@ const router = express.Router()
 const item = require('./models/item')
 
 // GETリクエストの処理
+// トップページ
 router.get('/', (req, res) => {
     // リクエストの処理
     console.log(req.body)
