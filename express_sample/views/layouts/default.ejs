@@ -12,11 +12,14 @@
 <body>
     <!-- ナビゲーション表示 -->
     <%- include('../components/nav.ejs') %>
-    <main class="container">
-        <!-- 各ページのコンテンツがここに表示 -->
-        <%- body %>
-    </main>
 
+        <main class="container">
+            <!-- 各ページのコンテンツがここに表示 -->
+            <%- body %>
+        </main>
+
+        <!-- フッター表示 -->
+        <%- include('../components/footer.ejs') %>
 </body>
 
 </html>
