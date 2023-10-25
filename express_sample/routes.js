@@ -2,11 +2,10 @@
 const express = require('express')
 // Routerオブジェクトを生成
 const router = express.Router()
-// models/item.js を読み込む
-const item = require('./models/item')
 
 // HomeControllerモジュール読み込み
 const HomeController = require('./controllers/HomeController')
+const ItemController = require('./controllers/ItemController')
 
 // GETリクエストの処理
 // トップページ
@@ -14,30 +13,11 @@ router.get('/', HomeController.index)
 router.get('/profile', HomeController.profile)
 
 // 商品一覧
-router.get('/item', (req, res) => {
-    var data = {
-        title: '商品一覧',
-        items: item.get(),
-    }
-    // views/item/index.ejs にデータを渡して表示
-    res.render('item/index', data)
-})
+router.get('/item', ItemController.index)
 
 // 商品詳細
 // /item/xxx のルーティング(パスパラメーター)
-router.get('/item/:id', (req, res) => {
-    const id = req.params.id
-    // TODO: case1 RDBMSを利用する
-    // TODO: case2 APIサーバを利用する
-    // itemモデルを使って、IDで商品データを取得
-    var selectItem = item.find(id)
-    var data = {
-        title: '商品詳細',
-        item: selectItem,
-    }
-    // views/item/detail.ejs にデータを渡して表示
-    res.render('item/detail', data)
-})
+router.get('/item/:id', ItemController.detail)
 
 // POSTリクエスト
 router.post('/auth', (req, res) => {
