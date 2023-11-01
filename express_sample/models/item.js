@@ -5,3 +5,6 @@ const Model = require("./Model");
 class Item extends Model {
     dataFile = "./data/items.json"
 }
+
+// モジュール化
+module.exports = Item
