@@ -12,3 +12,9 @@ exports.index = (req, res) => {
         res.redirect('/login')
     }
 }
+
+exports.logout = (req, res) => {
+    // ユーザのセッションを削除
+    delete (req.session.authUser)
+    res.redirect('/login')
+}
