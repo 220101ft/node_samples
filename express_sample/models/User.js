@@ -4,6 +4,18 @@ const Model = require("./Model");
 // Modelクラスを継承
 class User extends Model {
     dataFile = "./data/users.json"
+
+    /**
+     * 認証用のメソッド
+     * @param string email
+     * @param string password
+     * @returns array
+     */
+    auth = (email, password) => {
+        // email と password が一致したらユーザを返す
+        return this.get().find((value) => (value.email == email && value.password == password)
+        );
+    }
 }
 
 // モジュール化
