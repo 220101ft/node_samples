@@ -6,7 +6,7 @@ exports.index = (req, res) => {
     // ログインユーザがいれば
     if (user) {
         // views/user/index.ejs を表示
-        res.render('user/index')
+        res.render('user/index', { user: user })
     } else {
         // ログインユーザがいなければ、ログインページにリダイレクト
         res.redirect('/login')
