@@ -7,6 +7,7 @@ const router = express.Router()
 const HomeController = require('./controllers/HomeController')
 const ItemController = require('./controllers/ItemController')
 const LoginController = require('./controllers/LoginController')
+const UserController = require('./controllers/UserController')
 
 // GETリクエストの処理
 // Home
@@ -20,6 +21,9 @@ router.get('/item/:id', ItemController.detail)
 // Login
 router.get('/login', LoginController.index)
 router.post('/auth', LoginController.auth)
+
+// User
+router.get('/user', UserController.index)
 
 // モジュール化
 module.exports = router
