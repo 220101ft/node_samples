@@ -16,7 +16,6 @@ class Model {
     }
 
     /**
-     * 
      *  IDを指定してデータ取得するメソッド
      * @returns array
      */
