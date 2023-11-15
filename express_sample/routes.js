@@ -8,6 +8,11 @@ const HomeController = require('./controllers/HomeController')
 const ItemController = require('./controllers/ItemController')
 const LoginController = require('./controllers/LoginController')
 const UserController = require('./controllers/UserController')
+const RegistController = require('./controllers/RegistController')
+
+// Regist
+router.get('/regist', RegistController.index)
+router.post('/regist/add', RegistController.add)
 
 // GETリクエストの処理
 // Home

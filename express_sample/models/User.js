@@ -10,6 +10,10 @@ class User {
         try {
             const con = await mysql.createConnection(db.info);
             // SQL実行
+            // パスワードをハッシュ化
+            var hash = bcrypt.hashSync("password", 10);
+
+
             var sql = 'INSERT INTO users SET ?;'
             result = con.query(sql, post);
             con.end();
