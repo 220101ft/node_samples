@@ -5,19 +5,20 @@ const db = require('../lib/db')
 class User {
     //ユーザ追加（非同期処理）
     add = async (post) => {
-        // SQL
-        var sql = 'INSERT INTO users SET ?;'
+        // DB接続
+        var result;
         try {
-            // DB接続
             const con = await mysql.createConnection(db.info);
-            var result;
             // SQL実行
+            var sql = 'INSERT INTO users SET ?;'
             result = con.query(sql, post);
+            con.end();
+
         } catch (error) {
 
         } finally {
-            con.end();
         }
+        return result;
     }
     auth = (email, password) => {
 
